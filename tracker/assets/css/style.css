@@ -1,3 +1,6 @@
+/*
+    GENERAL
+---------------*/
 *{
     padding: 0;
     margin: 0;
@@ -5,6 +8,9 @@
     box-sizing: border-box;
 }
 
+/*
+           HEADER
+--------------------------*/
 .header{
     background: var(--terciary-color);
     display: flex;
@@ -16,7 +22,6 @@
 }
 
 .header h1{
-    font-size: 5rem;
     color: var(--ultra-color);
     font-weight: bold;
 }
@@ -26,6 +31,14 @@
     justify-content: space-evenly;
 }
 
+.header ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+/*
+            A
+ --------------------------*/
 a{
     color: var(--primary-link-color);
     text-decoration: none;
@@ -35,24 +48,33 @@ a:hover{
     color: var(--secondary-link-color);
 }
 
-.header ul{
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-}
+
 
 .main{
     background: var(--primary-color);
     color: var(--white-color);
 }
-
+/*
+        BANNER
+ --------------------*/
 .banner{
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
 
 }
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*
+           FOOTER
+ --------------------------*/
 
 .footer{
     background: var(--terciary-color);
@@ -74,19 +96,20 @@ a:hover{
     height: 100%;
     gap: 20px;
 }
-.footer a {
-    background: var(--terciary-color);
-}
-.socials li{
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
+
+
 .index-section{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
+
+
+
+/*
+         FONT
+ ----------------------*/
+
 .main h2{
     display: flex;
     font-size: 3rem;
@@ -95,15 +118,28 @@ a:hover{
     width: 100%;
 }
 
-.navigator-ul li{
-    list-style: none;
-    font-weight: bold;
-}
+
 .main h3{
     font-size: 1.5rem;
     text-align: center;
 }
 
+/*
+           LISTS
+ ------------------------*/
+
+.navigator-ul li{
+    list-style: none;
+    font-weight: bold;
+}
+.socials li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+/*
+      MEDIA
+------------------*/
 @media (max-width: 780px){
     .banner{height:100%;
     width: 100%;
@@ -116,7 +152,9 @@ a:hover{
     }
 }
 
-/* VARIABLES */
+/*
+      VARIABLES
+--------------------*/
 
 :root{
     --primary-color: #2E2E2E;
