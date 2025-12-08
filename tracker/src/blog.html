@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
 </head>
 <body>
 <header class="header">
@@ -21,55 +22,54 @@
         </ul>
     </nav>
 </header>
-<main class="main">
-    <figure class="banner">
-        <img class="banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner"/>
-
+<main class="blog-main">
+    <figure class="blog-banner">
+        <img class="blog-banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner"/>
     </figure>
-    <h2 class="main__heading">Last Updates</h2>
-    <section class="main__section">
-        <h3 class="main__subheading">Updates & News</h3>
-        <article>
-            <img src="../assets/img/44acc728-3c0c-50d1-9665-e1d642d4c731.jpg"/>
-            <a href="https://store.steampowered.com/news/app/1229490/view/519717485042208754"><h4>ULTRASUMMER</h4></a>
-            <p>Deals</p>
-            <p>Hello Machines, hot enough for you outside? You know what else is hot? These SAVINGS.</p>
+    <h2 class="blog-main__heading">Last Updates</h2>
+    <section class="blog-section">
+        <h3 class="blog-section__heading">Updates & News</h3>
+        <article class="blog-article">
+            <img class="blog-article__img" src="../assets/img/44acc728-3c0c-50d1-9665-e1d642d4c731.jpg"/>
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519717485042208754"><h4 class="blog-article__title">ULTRASUMMER</h4></a>
+            <p class="blog-article__desc">Deals</p>
+            <p class="blog-article__desc">Hello Machines, hot enough for you outside? You know what else is hot? These SAVINGS.</p>
         </article>
-        <article>
-            <a href="https://store.steampowered.com/news/app/1229490/view/519709240792711255"><h4>Patch 16d Changelog</h4></a>
-            <p>(Click to read the patch notes)</p>
+        <article class="blog-article">
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519709240792711255"><h4 class="blog-article__title">Patch 16d Changelog</h4></a>
+            <p class="blog-article__desc">(Click to read the patch notes)</p>
         </article>
-        <article>
-            <a href="https://store.steampowered.com/news/app/1229490/view/519706708688242273"><h4>Patch 16c Changelog</h4></a>
-            <p>(Click to read the patch notes)</p>
-        </article>
-    </section>
-    <h2 class="main__heading">Coming Soon...</h2>
-    <section class="main__section">
-        <h3 class="main__subheading">Next Updates</h3>
-        <article>
-            <img src="../assets/img/4a91b2ca-d381-5ba3-bf55-fad4adf47ec9.jpg"/>
-            <a href="https://store.steampowered.com/news/app/1229490/view/519715574346942869?snr=1_5_9_"><h4>Layer 8 : FRAUD - First Look</h4></a>
-            <p>Hello machines.<br>
-            Are you ready to have your world turned... upside down?<br>
-            Inside out?<br>
-            Round and round?<br>
-            Good... very good.</p>
-            <p><a href="https://www.youtube.com/watch?v=1H-wslA4kbY">Watch the YouTube video</a></p>
-            <p>Trust not your eyes, machines.</p>
-            <b>ULTRAKILL: Layer 8 - FRAUD will be out this year.</b>
+        <article class="blog-article">
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519706708688242273"><h4 class="blog-article__title">Patch 16c Changelog</h4></a>
+            <p class="blog-article__desc">(Click to read the patch notes)</p>
         </article>
     </section>
-    <h2 class="main__heading">Discussions</h2>
-    <section class="main__section">
-        <h3 class="main__subheading">Ask Something</h3>
-        <article>
-            <form>
-                <fieldset>
-                    <legend>Ask Something</legend>
-                    <label for="blog-question">Your question:</label>
-                    <input type="text" id="blog-question" name="question" placeholder="Drop your question here.">
-                    <button type="submit">Send</button>
+    <h2 class="blog-main__heading">Coming Soon...</h2>
+    <section class="blog-section">
+        <h3 class="blog-section__heading">Next Updates</h3>
+        <article class="blog-article">
+            <img class="blog-article__img" src="../assets/img/4a91b2ca-d381-5ba3-bf55-fad4adf47ec9.jpg"/>
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519715574346942869?snr=1_5_9_"><h4 class="blog-article__title">Layer 8 : FRAUD - First Look</h4></a>
+            <p class="blog-article__desc">Hello machines.<br>
+                Are you ready to have your world turned... upside down?<br>
+                Inside out?<br>
+                Round and round?<br>
+                Good... very good.</p>
+            <p class="blog-article__desc"><a class="blog-article__link" href="https://www.youtube.com/watch?v=1H-wslA4kbY">Watch the YouTube video</a></p>
+            <p class="blog-article__desc">Trust not your eyes, machines.</p>
+            <b class="blog-article__desc">ULTRAKILL: Layer 8 - FRAUD will be out this year.</b>
+        </article>
+    </section>
+    <h2 class="blog-main__heading">Discussions</h2>
+    <section class="blog-section">
+        <h3 class="blog-section__heading">Ask Something</h3>
+        <article class="blog-article">
+            <form class="blog-form">
+                <fieldset class="blog-form__fieldset">
+                    <legend class="blog-form__legend">Ask Something</legend>
+                    <label class="blog-form__label" for="blog-question">Your question:</label>
+                    <input class="blog-form__input" type="text" id="blog-question" name="question" placeholder="Drop your question here.">
+                    <button class="blog-form__button" type="submit">Send</button>
                 </fieldset>
             </form>
         </article>
