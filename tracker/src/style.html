@@ -2,55 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Style</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-<header>
+<header class="header">
     <a href="index.html">
-        <img src="../assets/img/uklogo.png" height="80" width="80" alt="logo"/>
+        <img class="header__logo" src="../assets/img/uklogo.png" alt="logo"/>
     </a>
-    <h1>UltraWiki</h1>
-    <nav>
-        <ul>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+    <h1 class="header__title">UltraWiki</h1>
+    <nav class="navigator-header">
+        <ul class="navigator-header__ul">
+            <li class="navigator-header__item"><a class="navigator-header__link" href="services.html">Services</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="about.html">About</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="contact.html">Contact</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="blog.html">Blog</a></li>
         </ul>
     </nav>
 </header>
-<main>
-    <img src="../assets/img/ukbanner.jpg" height="353" width="616" alt="banner"/>
+<main class="main">
+    <figure class="banner">
+        <img class="banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner"/>
+
+    </figure>
+    <section class="main__section">
+        <h2 class="main__heading">Style</h2>
+        <p>This page is under construction. Style details coming soon!</p>
+    </section>
 </main>
-</body>
-<footer>
-    <ul>
+<footer class="footer">
+    <ul class="footer__ul">
         <li><a href="https://www.indie.io/terms-of-service">Terms of Service</a></li>
         <li><a href="https://www.indie.io/privacy-policy">Privacy Policy</a></li>
-        <li> My Links
+        <li>My Links
             <ul>
                 <li><a href="https://www.instagram.com/m_de_manola/">Instagram</a></li>
-                <li><a href="https://discord.gg/sHWhaqzWzE">Discord Server</a></li>
+                <li><a href="https://discord.gg/sHWhaqzWzE">Discord</a></li>
                 <li><a href="https://x.com/MdeManola">Twitter/X</a></li>
             </ul>
         </li>
         <li>Creator's Social Media
-            <ul>
+            <ul class="socials">
                 <li><a href="https://www.youtube.com/hakita">YouTube</a></li>
-                <li><a href="https://discord.gg/newblood">Discord Server</a></li>
+                <li><a href="https://discord.gg/newblood">Discord</a></li>
                 <li><a href="https://x.com/hakitadev">Twitter/X</a></li>
-            </ul></li>
+            </ul>
+        </li>
         <li><a href="https://store.steampowered.com/app/1229490/ULTRAKILL/">Game Page</a></li>
-
         <li>
-            <form>Join our Newsletter
-                <input type="email" placeholder="me@ultra.kill">
-                <button type="submit">Submit</button>
+            <form>
+                <fieldset>
+                    <legend>Join our Newsletter</legend>
+                    <label for="newsletter-email-style">Email:</label>
+                    <input type="email" id="newsletter-email-style" name="email" placeholder="me@ultra.kill">
+                    <button type="submit">Submit</button>
+                </fieldset>
             </form>
         </li>
-
-
-
     </ul>
-    <a href="https://onlyfans.wtf/mdemanola"><img src="../assets/img/Le_lenny_face.jpg" width="10"height="10"></a>
+    <a href="https://onlyfans.wtf/mdemanola"><img src="../assets/img/Le_lenny_face.jpg" width="10" height="10" alt="lenny face"></a>
 </footer>
+</body>
+</html>
