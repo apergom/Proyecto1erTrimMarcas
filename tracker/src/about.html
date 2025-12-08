@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/about.css" />
 </head>
-<body>
+<body class="about-page">
 <header class="header">
     <a href="index.html">
-        <img class="header__logo" src="../assets/img/uklogo.png" alt="logo"/>
+        <img class="header__logo" src="../assets/img/uklogo.png" alt="UltraWiki logo"/>
     </a>
     <h1 class="header__title">UltraWiki</h1>
-    <nav class="navigator-header">
+    <nav class="navigator-header" aria-label="Main navigation">
         <ul class="navigator-header__ul">
             <li class="navigator-header__item"><a class="navigator-header__link" href="services.html">Services</a></li>
             <li class="navigator-header__item"><a class="navigator-header__link" href="about.html">About</a></li>
@@ -21,36 +22,78 @@
         </ul>
     </nav>
 </header>
+
 <main class="main">
-    <figure class="banner">
-        <img class="banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner"/>
-
+    <figure class="banner" role="img" aria-label="UltraWiki banner">
+        <img class="banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner image" />
     </figure>
-    <h2 class="main__heading">About some ULTRAPEOPLE</h2>
-    <section class="main__section">
-        <h3 class="main__subheading">About me & this project</h3>
-        <article>
-            <p>Sup. If you're reading this you really went deep into this page just to read about me.</p>
-            <p>Lemme get started. I'm Manu (Antonio Manuel Pérez Gómez professionally, and MdeManola in many other places). I'm just a guy who's passionate about videogames and music (especially when it comes to soundtracks and game OSTs).</p>
-            <p>Now, just so you know, this wasn't my first idea when making this project. I wanted to make some kind of tracker to "track" (yeah, I just did that) your progress in videogames just like a digital checklist, but after some thought, I had the brightest idea ever: make my own version of one of my favorite games' Wikipedia. And that's exactly what you're into right now.</p>
-            <p>I took inspiration from other well-made sites such as <a href="https://gg.deals/">GGDeals</a> or the REAL <a href="https://ultrakill.wiki.gg/">ULTRAKILL Wiki</a>.</p>
-            <p>Oh, and before you get lost among the important people that worked on this masterpiece (the game): I have no idea why I'm doing this in English.</p>
-        </article>
-    </section>
 
+    <h2 class="main__heading">About some ULTRAPEOPLE</h2>
+
+    <div class="container-about">
         <section class="main__section">
-        <h3 class="main__subheading">About Hakita</h3>
-        <article>
-            <img src="../assets/img/hakita.jpg"/>
-            <p>Hakita is the pseudonym of Arsi Patala, the creator, main developer, and composer of the video game ULTRAKILL. He is known for his work on this fast-paced, ultraviolent old school first-person shooter.</p>
-        </article>
-        <h3 class="main__subheading">About New Blood Interactive</h3>
-        <article>
-            <img src="../assets/img/nbi.jpg"/>
-            <p>New Blood Interactive is a video game publisher and developer founded in 2014 by Aaron Alexander, Kreyg DeZago, and Dave Oshry. Initially focused on virtual reality games, the company shifted towards retro-inspired shooters like ULTRAKILL, DUSK, and others.</p>
-        </article>
-    </section>
+            <div class="about-intro">
+                <h3 class="main__subheading">About me & this project</h3>
+                <article>
+                    <p>Hi — I'm Antonio Manuel Pérez Gómez (known online as MdeManola). I'm passionate about videogames and music and I built this small UltraWiki as a personal, educational project to gather useful info about ULTRAKILL and related community resources.</p>
+
+                    <p>The idea behind this tracker was to create a compact, quick-to-scan site that mixes short encyclopedia-style entries with news and links to useful places (stores, patch notes, creator pages). Inspirations include sites like <a href="https://gg.deals/">GGDeals</a> and the official <a href="https://ultrakill.wiki.gg/">ULTRAKILL Wiki</a>.</p>
+
+                    <p>This project is an exercise in markup and layout. It reuses the global style in <code>style.css</code> and adds a small page-specific stylesheet (<code>about.css</code>) so styling stays consistent across the site.</p>
+                </article>
+            </div>
+
+            <div class="profile" aria-labelledby="profile-heading">
+                <img src="../assets/img/uklogo.png" alt="Author avatar / logo" />
+                <div class="meta">
+                    <h3 id="profile-heading">Antonio "MdeManola"</h3>
+                    <p class="small">Creator, maintainer and content curator. This site is a personal project — not official — and aims to be informative and entertaining for fellow machines.</p>
+                    <p><span class="badge-about">Student project</span> <span class="badge-about">Fan-made</span></p>
+                    <p><a class="cta" href="blog.html">Read the blog</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="main__section" aria-label="Credits and contributors">
+            <h3 class="main__subheading">Credits</h3>
+            <div class="credits" role="list">
+                <div class="credit" role="listitem">
+                    <div class="credit__title">Author</div>
+                    <div class="credit__desc">Antonio "MdeManola" — project layout, content and styling.</div>
+                </div>
+                <div class="credit" role="listitem">
+                    <div class="credit__title">Inspiration</div>
+                    <div class="credit__desc">GGDeals, community wikis and other fan resources that guided the layout and content structure.</div>
+                </div>
+                <div class="credit" role="listitem">
+                    <div class="credit__title">Acknowledgements</div>
+                    <div class="credit__desc">Arsi "Hakita" Patala and New Blood Interactive for the original game and materials.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated: use the same "profile" layout for Hakita -->
+        <section class="main__section" aria-label="About Hakita">
+            <article class="profile" aria-labelledby="hakita-heading">
+                <img src="../assets/img/hakita.jpg" alt="Hakita portrait" />
+                <div class="meta">
+                    <h3 id="hakita-heading">About Hakita</h3>
+                    <p>Arsi Patala (Hakita) is the developer and composer behind ULTRAKILL. His solo-driven creative approach shaped the game's distinctive sound and fast-paced design.</p>
+                </div>
+            </article>
+
+            <!-- Updated: apply the same layout here as in the Hakita bloc -->
+            <article class="profile" aria-labelledby="nbi-heading">
+                <img src="../assets/img/nbi.jpg" alt="New Blood Interactive logo" />
+                <div class="meta">
+                    <h3 id="nbi-heading">About New Blood Interactive</h3>
+                    <p>New Blood Interactive is the studio that publishes ULTRAKILL. Founded by a small team, the studio focuses on high-energy indie titles and helped bring ULTRAKILL to a wider audience.</p>
+                </div>
+            </article>
+        </section>
+    </div>
 </main>
+
 <footer class="footer">
     <ul class="footer__ul">
         <li><a href="https://www.indie.io/terms-of-service">Terms of Service</a></li>

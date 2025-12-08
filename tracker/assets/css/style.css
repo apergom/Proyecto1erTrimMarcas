@@ -638,6 +638,197 @@ input[type="submit"]:hover {
         padding: 1.1rem .85rem 1.6rem .95rem;
     }
 }
+.about-page {
+    --about-max-width: 920px;
+    --card-bg-soft: rgba(255,255,255,0.02);
+    --muted-cta: rgba(255,215,0,0.08);
+    padding-bottom: 2.5rem;
+}
+
+
+.about-page .container-about {
+    max-width: var(--about-max-width);
+    margin: 0 auto;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+}
+
+.about-page .main__heading {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.6px;
+}
+
+
+.about-page .about-intro {
+    background: linear-gradient(180deg, var(--card-bg-soft), transparent);
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin: 0.6rem auto 1rem auto;
+    max-width: var(--about-max-width);
+    color: var(--white-color);
+    line-height: 1.65;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+}
+
+
+.about-page .about-intro p {
+    color: var(--white-color);
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+
+.about-page .profile {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+
+.about-page .profile img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid rgba(255,255,255,0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.18));
+    flex-shrink: 0;
+}
+
+
+.about-page .profile .meta {
+    flex: 1 1 360px;
+}
+.about-page .profile .meta h3 {
+    color: var(--link-color);
+    margin-bottom: 0.25rem;
+}
+.about-page .profile .meta p {
+    color: var(--white-color);
+    margin-bottom: 0.5rem;
+}
+
+
+.about-page .credits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+.about-page .credits .credit {
+    background: #232323;
+    border-radius: 10px;
+    padding: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.44);
+}
+.about-page .credit .credit__title {
+    color: var(--comp-tertiary-color);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+.about-page .credit .credit__desc {
+    color: var(--white-color);
+    font-size: 0.95rem;
+}
+
+
+.about-page .main__section article img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+@media (min-width: 860px) {
+    .about-page .main__section article {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 1rem;
+        align-items: start;
+        align-content: start;
+    }
+    .about-page .main__section article img {
+        margin: 0;
+    }
+}
+
+
+.about-page .badge-about {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255,215,0,0.06);
+    color: var(--link-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255,215,0,0.06);
+}
+
+
+.about-page a.cta {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.45rem 0.9rem;
+    background: linear-gradient(90deg, var(--comp-tertiary-color), var(--secondary-color));
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    transition: transform 180ms ease, filter 180ms ease;
+}
+.about-page a.cta:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.06);
+}
+
+
+.about-page .footer {
+    padding-top: 1.25rem;
+}
+
+
+.about-page .about-intro a,
+.about-page .credit a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+.about-page .about-intro a:hover,
+.about-page .credit a:hover {
+    color: var(--comp-tertiary-color);
+}
+
+
+@media (max-width: 860px) {
+    .about-page .credits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-page .profile {
+        justify-content: center;
+    }
+    .about-page .profile .meta {
+        text-align: center;
+    }
+}
+@media (max-width: 520px) {
+    .about-page .credits {
+        grid-template-columns: 1fr;
+    }
+    .about-page .profile img {
+        width: 120px;
+        height: 120px;
+    }
+    .about-page .about-intro {
+        padding: 0.85rem;
+    }
+}
 /* ===== UTILS ===== */
 img {
     max-width: 100%;
