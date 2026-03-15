@@ -10,18 +10,39 @@
     --white-color: #D9D9D9;
 }
 
-.dark-toggle {
-    margin-top: 0.8rem;
+/* ===== Free-flow feature: Dark mode ===== */
+body.dark-mode {
+    --primary-color: #2E2E2E;
+    --secondary-color: #999999;
+    --tertiary-color: #565656;
+    --comp-prim-color: #989898;
+    --comp-secondary-color: #555555;
+    --comp-tertiary-color: #FFFFFF;
+    --link-color: #EEEEEE;
+    --white-color: #D9D9D9;
+}
+body.dark-mode .header,
+body.dark-mode .footer{
+    background-color: #232323
 }
 
-body.dark {
-    --primary-color: #141414;
-    --secondary-color: #AAAAAA;
-    --tertiary-color: #454545;
-    --comp-prim-color: #232424;
-    --comp-tertiary-color: #efefef;
-    --link-color: #ffffff;
-    --white-color: #f0f0f0;
+body.dark-mode .blog-article,
+body.dark-mode .blog-section {
+    background-color: #2e2e2e;
+    color: #f1f1f1;
+}
+
+body.dark-mode a {
+    color: #EEEEEE;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode button {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    border-color: #444;
 }
 
 * {

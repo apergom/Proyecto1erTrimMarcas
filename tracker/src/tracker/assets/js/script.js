@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+    
 
 
     const postForm = document.getElementById("postForm");
@@ -171,4 +172,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterCategory.addEventListener("change", applyFilters);
     filterStatus.addEventListener("change", applyFilters);
-});
+}
+);
