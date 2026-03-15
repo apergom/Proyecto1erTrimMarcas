@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="../assets/js/script.js" defer></script>
-    <script src="../assets/js/theme.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="tracker/assets/js/script.js" defer></script>
 
 </head>
 <body>
 <header class="header">
     <a href="index.html">
-        <img class="header__logo" src="../assets/img/uklogo.png" alt="logo"/>
+        <img class="header__logo" src="../assets/img/uklogo.png" alt="logo" />
     </a>
     <h1 class="header__title">UltraWiki</h1>
     <nav class="navigator-header">
@@ -23,63 +22,122 @@
             <li class="navigator-header__item"><a class="navigator-header__link" href="blog.html">Blog</a></li>
         </ul>
     </nav>
-    <button type="button" id="dark-toggle" class="dark-toggle">Modo oscuro</button>
+    <button type="button" id="dark-toggle" class="dark-toggle">Dark mode</button>
 </header>
+
 <main class="blog-main">
     <figure class="blog-banner">
-        <img class="blog-banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner"/>
+        <img class="blog-banner__img" src="../assets/img/ukbanner2.png" alt="UltraWiki banner" />
     </figure>
+
     <h2 class="blog-main__heading">Last Updates</h2>
     <section class="blog-section">
         <h3 class="blog-section__heading">Updates & News</h3>
+
         <article class="blog-article">
-            <img class="blog-article__img" src="../assets/img/44acc728-3c0c-50d1-9665-e1d642d4c731.jpg"/>
-            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519717485042208754"><h4 class="blog-article__title">ULTRASUMMER</h4></a>
+            <img class="blog-article__img" src="../assets/img/44acc728-3c0c-50d1-9665-e1d642d4c731.jpg" alt="ULTRASUMMER" />
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519717485042208754">
+                <h4 class="blog-article__title">ULTRASUMMER</h4>
+            </a>
             <p class="blog-article__desc">Deals</p>
             <p class="blog-article__desc">Hello Machines, hot enough for you outside? You know what else is hot? These SAVINGS.</p>
         </article>
+
         <article class="blog-article">
-            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519709240792711255"><h4 class="blog-article__title">Patch 16d Changelog</h4></a>
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519709240792711255">
+                <h4 class="blog-article__title">Patch 16d Changelog</h4>
+            </a>
             <p class="blog-article__desc">(Click to read the patch notes)</p>
         </article>
+
         <article class="blog-article">
-            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519706708688242273"><h4 class="blog-article__title">Patch 16c Changelog</h4></a>
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519706708688242273">
+                <h4 class="blog-article__title">Patch 16c Changelog</h4>
+            </a>
             <p class="blog-article__desc">(Click to read the patch notes)</p>
         </article>
     </section>
+
     <h2 class="blog-main__heading">Coming Soon...</h2>
     <section class="blog-section">
         <h3 class="blog-section__heading">Next Updates</h3>
         <article class="blog-article">
-            <img class="blog-article__img" src="../assets/img/4a91b2ca-d381-5ba3-bf55-fad4adf47ec9.jpg"/>
-            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519715574346942869?snr=1_5_9_"><h4 class="blog-article__title">Layer 8 : FRAUD - First Look</h4></a>
-            <p class="blog-article__desc">Hello machines.<br>
-                Are you ready to have your world turned... upside down?<br>
-                Inside out?<br>
-                Round and round?<br>
-                Good... very good.</p>
+            <img class="blog-article__img" src="../assets/img/4a91b2ca-d381-5ba3-bf55-fad4adf47ec9.jpg" alt="Layer 8 first look" />
+            <a class="blog-article__link" href="https://store.steampowered.com/news/app/1229490/view/519715574346942869?snr=1_5_9_">
+                <h4 class="blog-article__title">Layer 8 : FRAUD - First Look</h4>
+            </a>
+            <p class="blog-article__desc">Hello machines.<br />Are you ready to have your world turned... upside down?<br />Inside out?<br />Round and round?<br />Good... very good.</p>
             <p class="blog-article__desc"><a class="blog-article__link" href="https://www.youtube.com/watch?v=1H-wslA4kbY">Watch the YouTube video</a></p>
             <p class="blog-article__desc">Trust not your eyes, machines.</p>
             <b class="blog-article__desc">ULTRAKILL: Layer 8 - FRAUD will be out this year.</b>
         </article>
     </section>
-    <h2 class="blog-main__heading">Discussions</h2>
+
+    <h2 class="blog-main__heading">Community Post Manager</h2>
     <section class="blog-section">
-        <h3 class="blog-section__heading">Ask Something</h3>
+        <h3 class="blog-section__heading">Create, Display and Filter Entries</h3>
+
         <article class="blog-article">
-            <form class="blog-form">
+            <form id="postForm" class="blog-form" novalidate>
                 <fieldset class="blog-form__fieldset">
-                    <legend class="blog-form__legend">Ask Something</legend>
-                    <label class="blog-form__label" for="blog-question">Your question:</label>
-                    <input class="blog-form__input" type="text" id="blog-question" name="question" placeholder="Drop your question here.">
-                    <button class="blog-form__button" type="submit">Send</button>
+                    <legend class="blog-form__legend">Add new post</legend>
+
+                    <label class="blog-form__label" for="postTitle">Title *</label>
+                    <input class="blog-form__input" type="text" id="postTitle" name="title" minlength="3" maxlength="80" required />
+                    <small id="titleMessage" class="form-message"></small>
+
+                    <label class="blog-form__label" for="postCategory">Category *</label>
+                    <select class="blog-form__input" id="postCategory" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="news">News</option>
+                        <option value="guides">Guides</option>
+                        <option value="lore">Lore</option>
+                        <option value="community">Community</option>
+                    </select>
+                    <small id="categoryMessage" class="form-message"></small>
+
+                    <label class="blog-form__label" for="postStatus">Status *</label>
+                    <select class="blog-form__input" id="postStatus" name="status" required>
+                        <option value="">Select a status</option>
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                    </select>
+                    <small id="statusMessage" class="form-message"></small>
+
+                    <label class="blog-form__label" for="postContent">Content *</label>
+                    <textarea class="blog-form__input" id="postContent" name="content" rows="4" minlength="20" required></textarea>
+                    <small id="contentMessage" class="form-message"></small>
+
+                    <button class="blog-form__button" type="submit">Add post</button>
+                    <p id="formGlobalMessage" class="form-global-message" aria-live="polite"></p>
                 </fieldset>
             </form>
 
-            <div id="questions-list"></div>
+            <div class="blog-filters">
+                <h4>Filters</h4>
+                <label for="filterCategory">Category</label>
+                <select id="filterCategory" class="blog-form__input">
+                    <option value="all">All</option>
+                    <option value="news">News</option>
+                    <option value="guides">Guides</option>
+                    <option value="lore">Lore</option>
+                    <option value="community">Community</option>
+                </select>
+
+                <label for="filterStatus">Status</label>
+                <select id="filterStatus" class="blog-form__input">
+                    <option value="all">All</option>
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                </select>
+            </div>
+
+            <div id="postsContainer" class="posts-grid" aria-live="polite"></div>
         </article>
     </section>
+
 </main>
+
 <footer class="footer">
     <ul class="footer__ul">
         <li><a href="https://www.indie.io/terms-of-service">Terms of Service</a></li>
@@ -104,13 +162,12 @@
                 <fieldset>
                     <legend>Join our Newsletter</legend>
                     <label for="newsletter-email-blog">Email:</label>
-                    <input type="email" id="newsletter-email-blog" name="email" placeholder="me@ultra.kill">
+                    <input type="email" id="newsletter-email-blog" name="email" placeholder="me@ultra.kill" />
                     <button type="submit">Submit</button>
                 </fieldset>
             </form>
         </li>
     </ul>
-
 </footer>
 </body>
 </html>

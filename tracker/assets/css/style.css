@@ -860,28 +860,72 @@ p {
 }
 
 
-.validation-messages {
-    margin-top: 8px;
-    font-size: 14px;
+/* ===== Blog manager mini styles (RA3 support) ===== */
+
+.blog-filters {
+    display: grid;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    max-width: 420px;
 }
 
-.validation-messages.error {
-    color: #b00020;
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.validation-messages.success {
-    color: #0b6b2f;
+.post-card {
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 0.9rem;
+    background: #111111;
 }
 
-.tracker-item {
-    border: 1px solid #ccc;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
+/* Validation states */
+.form-message {
+    display: block;
+    min-height: 1rem;
+    margin: 0.2rem 0 0.5rem;
+    font-size: 0.8rem;
 }
 
-.delete-btn {
-    margin-top: 8px;
+.form-global-message {
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+.input-error {
+    border: 2px solid #d93025 !important;
+}
+
+.input-success {
+    border: 2px solid #188038 !important;
+}
+
+.message-error {
+    color: #d93025;
+}
+
+.message-success {
+    color: #188038;
+}
+
+/* Filter visibility */
+.hidden {
+    display: none !important;
+}
+
+/* Delete button helper */
+.post-delete-btn {
+    margin-top: 0.5rem;
+}
+
+/* Optional dark mode compatibility */
+body.dark-mode .post-card {
+    background: #1f1f1f;
+    border-color: #3a3a3a;
 }
 
 ::-webkit-scrollbar {

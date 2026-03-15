@@ -1,135 +1,174 @@
-// Preguntas del blog con localStorage (básico)
-// - Añade artículo con fecha
-// - Botón para borrar
-// - Usa const/let
-
-const STORAGE_KEY = "blogQuestionsV1";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".blog-form");
-    const input = document.getElementById("blog-question");
-    let list = document.getElementById("questions-list");
-
-    if (!form || !input) return;
 
 
-    if (!list) {
-        list = document.createElement("div");
-        list.id = "questions-list";
-        form.parentNode.appendChild(list);
+    const postForm = document.getElementById("postForm");
+    const postsContainer = document.getElementById("postsContainer");
+    const formGlobalMessage = document.getElementById("formGlobalMessage");
+    const filterCategory = document.getElementById("filterCategory");
+    const filterStatus = document.getElementById("filterStatus");
+
+    // If blog manager is not on this page, exit gracefully.
+    if (!postForm || !postsContainer || !formGlobalMessage || !filterCategory || !filterStatus) {
+        return;
     }
 
-    renderQuestions(list);
+    const fields = {
+        title: document.getElementById("postTitle"),
+        category: document.getElementById("postCategory"),
+        status: document.getElementById("postStatus"),
+        content: document.getElementById("postContent"),
+    };
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    const fieldMessages = {
+        title: document.getElementById("titleMessage"),
+        category: document.getElementById("categoryMessage"),
+        status: document.getElementById("statusMessage"),
+        content: document.getElementById("contentMessage"),
+    };
 
-        const text = input.value.trim();
-        if (text === "") return;
+    let posts = [];
 
-        const questions = loadQuestions();
+    const validators = {
+        title: (value) => {
+            if (!value.trim()) return "Title is required.";
+            if (value.trim().length < 3) return "Title must be at least 3 characters.";
+            return "";
+        },
+        category: (value) => (!value ? "Category is required." : ""),
+        status: (value) => (!value ? "Status is required." : ""),
+        content: (value) => {
+            if (!value.trim()) return "Content is required.";
+            if (value.trim().length < 20) return "Content must be at least 20 characters.";
+            return "";
+        },
+    };
 
-        const item = {
-            id: String(Date.now()),   // id simple
-            text: text,
-            createdAt: Date.now()
+    const setFieldState = (fieldKey, errorMessage) => {
+        const input = fields[fieldKey];
+        const msg = fieldMessages[fieldKey];
+
+        if (!input || !msg) return;
+
+        input.classList.remove("input-error", "input-success");
+        msg.classList.remove("message-error", "message-success");
+
+        if (errorMessage) {
+            input.classList.add("input-error");
+            msg.classList.add("message-error");
+            msg.textContent = errorMessage;
+        } else {
+            input.classList.add("input-success");
+            msg.classList.add("message-success");
+            msg.textContent = "Looks good.";
+        }
+    };
+
+    const validateField = (fieldKey) => {
+        const value = fields[fieldKey].value;
+        const error = validators[fieldKey](value);
+        setFieldState(fieldKey, error);
+        return !error;
+    };
+
+    const validateForm = () => Object.keys(fields).map(validateField).every(Boolean);
+
+    Object.keys(fields).forEach((key) => {
+        fields[key].addEventListener("input", () => validateField(key));
+        fields[key].addEventListener("change", () => validateField(key));
+    });
+
+    const createPostCard = (post) => {
+        const { id, title, category, status, content, createdAt } = post;
+        const article = document.createElement("article");
+
+        article.className = "blog-article post-card";
+        article.dataset.id = String(id);
+        article.dataset.category = category;
+        article.dataset.status = status;
+
+        article.innerHTML = `
+      <h4 class="blog-article__title">${title}</h4>
+      <p class="blog-article__desc"><strong>Category:</strong> ${category}</p>
+      <p class="blog-article__desc"><strong>Status:</strong> ${status}</p>
+      <p class="blog-article__desc">${content}</p>
+      <p class="blog-article__desc"><small>Created: ${createdAt}</small></p>
+      <button type="button" class="blog-form__button post-delete-btn" data-action="delete">Delete</button>
+    `;
+
+        postsContainer.appendChild(article);
+    };
+
+    const applyFilters = () => {
+        const categoryValue = filterCategory.value;
+        const statusValue = filterStatus.value;
+        const cards = postsContainer.querySelectorAll(".post-card");
+
+        cards.forEach((card) => {
+            const categoryMatch = categoryValue === "all" || card.dataset.category === categoryValue;
+            const statusMatch = statusValue === "all" || card.dataset.status === statusValue;
+            card.classList.toggle("hidden", !(categoryMatch && statusMatch));
+        });
+    };
+
+    postForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!validateForm()) {
+            formGlobalMessage.textContent = "Please fix the highlighted fields.";
+            formGlobalMessage.classList.add("message-error");
+            formGlobalMessage.classList.remove("message-success");
+            return;
+        }
+
+        const formData = new FormData(postForm);
+        const data = Object.fromEntries(formData.entries());
+        const { title, category, status, content } = data;
+
+        const newPost = {
+            id: Date.now(),
+            title: title.trim(),
+            category,
+            status,
+            content: content.trim(),
+            createdAt: new Date().toLocaleString("en-GB"),
         };
 
-        questions.push(item);
-        saveQuestions(questions);
+        posts = [...posts, newPost];
+        createPostCard(newPost);
+        applyFilters();
 
-        addQuestionArticle(list, item);
-        input.value = "";
+        postForm.reset();
+
+        Object.keys(fields).forEach((key) => {
+            fields[key].classList.remove("input-error", "input-success");
+            fieldMessages[key].classList.remove("message-error", "message-success");
+            fieldMessages[key].textContent = "";
+        });
+
+        formGlobalMessage.textContent = "Post added successfully.";
+        formGlobalMessage.classList.add("message-success");
+        formGlobalMessage.classList.remove("message-error");
     });
 
-    // Delegación de eventos: un listener para todos los botones borrar
-    list.addEventListener("click", (e) => {
-        const target = e.target;
-        if (!target) return;
+    postsContainer.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        if (!target.matches('[data-action="delete"]')) return;
 
-        if (target.matches("[data-action='delete']")) {
-            const id = target.getAttribute("data-id");
-            deleteQuestion(id);
-            renderQuestions(list);
-        }
+        const card = target.closest(".post-card");
+        if (!card) return;
+
+        const { id } = card.dataset;
+        posts = posts.filter((post) => String(post.id) !== id);
+
+        if (card.parentElement) card.remove();
+
+        formGlobalMessage.textContent = "Post deleted.";
+        formGlobalMessage.classList.add("message-success");
+        formGlobalMessage.classList.remove("message-error");
     });
+
+    filterCategory.addEventListener("change", applyFilters);
+    filterStatus.addEventListener("change", applyFilters);
 });
-
-function loadQuestions() {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-
-    try {
-        return JSON.parse(raw);
-    } catch (e) {
-        return [];
-    }
-}
-
-function saveQuestions(arr) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-}
-
-function deleteQuestion(id) {
-    const questions = loadQuestions();
-    const filtered = [];
-
-    for (let i = 0; i < questions.length; i++) {
-        if (questions[i].id !== id) filtered.push(questions[i]);
-    }
-
-    saveQuestions(filtered);
-}
-
-function renderQuestions(list) {
-    const questions = loadQuestions();
-
-    list.innerHTML = "";
-
-    for (let i = 0; i < questions.length; i++) {
-        addQuestionArticle(list, questions[i]);
-    }
-}
-
-function formatDate(ts) {
-    const d = new Date(ts);
-
-    const dd = String(d.getDate()).padStart(2, "0");
-    const mm = String(d.getMonth() + 1).padStart(2, "0");
-    const yyyy = d.getFullYear();
-    const hh = String(d.getHours()).padStart(2, "0");
-    const min = String(d.getMinutes()).padStart(2, "0");
-
-    return `${dd}/${mm}/${yyyy} ${hh}:${min}`;
-}
-
-function addQuestionArticle(list, item) {
-    const article = document.createElement("article");
-    article.className = "blog-article";
-
-    const title = document.createElement("h4");
-    title.className = "blog-article__title";
-    title.textContent = "Pregunta";
-
-    const dateP = document.createElement("p");
-    dateP.className = "blog-article__desc";
-    dateP.textContent = `Fecha: ${formatDate(item.createdAt)}`;
-
-    const textP = document.createElement("p");
-    textP.className = "blog-article__desc";
-    textP.textContent = item.text;
-
-    const delBtn = document.createElement("button");
-    delBtn.type = "button";
-    delBtn.className = "blog-form__button"; // reusa el estilo existente
-    delBtn.textContent = "Borrar";
-    delBtn.setAttribute("data-action", "delete");
-    delBtn.setAttribute("data-id", item.id);
-
-    article.appendChild(title);
-    article.appendChild(dateP);
-    article.appendChild(textP);
-    article.appendChild(delBtn);
-
-    list.appendChild(article);
-}
