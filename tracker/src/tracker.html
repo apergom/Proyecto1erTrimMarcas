@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/tracker.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="development.html">Development</a></li>
+                <li><a href="enemies.html">Enemies</a></li>
+                <li><a href="levels.html">Levels</a></li>
+                <li><a href="lore.html">Lore</a></li>
+                <li><a href="soundtrack.html">Soundtrack</a></li>
+                <li><a href="style.html">Style</a></li>
+                <li><a href="weapons.html">Weapons</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="tracker-section">
+            <form class="tracker-form">
+                <input type="text" id="title" placeholder="Title" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="category1">Category 1</option>
+                    <option value="category2">Category 2</option>
+                </select>
+                <select id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="new">New</option>
+                    <option value="in-progress">In Progress</option>
+                </select>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <button type="submit">Add Item</button>
+                <div class="validation-messages"></div>
+            </form>
+            <div class="filter-bar">
+                <input type="text" id="search" placeholder="Search..."><select id="filter-category"></select><select id="filter-status"></select>
+            </div>
+            <div id="item-list" class="tracker-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Your Company</p>
+    </footer>
+</body>
+</html>
