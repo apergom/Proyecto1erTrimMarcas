@@ -1,15 +1,22 @@
-// Global dark mode code
-let darkToggle = document.getElementById('dark-toggle');
+document.addEventListener("DOMContentLoaded", () => {
+    const darkToggleBtn = document.getElementById("dark-toggle");
+    if (!darkToggleBtn) return;
 
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark');
-}
+    const setButtonState = (isDark) => {
+        darkToggleBtn.setAttribute("aria-pressed", String(isDark));
+        darkToggleBtn.textContent = isDark ? "Light mode" : "Dark mode";
+    };
 
-darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    if (document.body.classList.contains('dark')) {
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        localStorage.setItem('darkMode', 'disabled');
-    }
+    // Load saved preference
+    const savedTheme = localStorage.getItem("theme");
+    const isDarkSaved = savedTheme === "dark";
+
+    document.body.classList.toggle("dark-mode", isDarkSaved);
+    setButtonState(isDarkSaved);
+
+    darkToggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        setButtonState(isDark);
+    });
 });
