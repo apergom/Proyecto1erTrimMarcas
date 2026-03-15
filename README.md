@@ -60,6 +60,66 @@ Las páginas temáticas adicionales funcionan como capítulos especializados de 
 
 El sitio está diseñado para que cualquier fan de ULTRAKILL encuentre en un único lugar **información jugable, de universo, de comunidad y de compra**, sin tener que ir saltando entre muchas webs distintas. Por ello se combinan textos detallados, tablas, imágenes, enlaces oficiales y un tono personal y con humor, buscando que la experiencia sea útil, fiable y cercana al usuario.
 
-## Comentarios Adicionales
 
-Para aclarar los cambios realizados tras leer los comentarios de retroalimentacion. He aplicado todo lo que me has comentado para poder subir en los distintos criterios de HTML. También he de decir que me he ayudado de la IA para ciertas cosas que no sabia realmente como aplicar y que ni leyendo los apuntes he podido sacar. Sobre las paginas web vacias, las he querido dejar en blanco puesto que me llevaria muchisimo trabajo el sacarlas adelante y como en los criterios solo se evaluan 6 ".html" no las habia modificado, mas que nada, estan como plan de futuro.
+# Actualización README JS
+
+## RA3 — Acceso y manipulación del DOM con JavaScript
+
+### 3.a Clasificación de lenguajes de script de cliente
+En este proyecto se utiliza **JavaScript** como lenguaje de script de cliente, basado en el estándar **ECMAScript**.
+Se aplica sintaxis moderna **ES6+** (let/const, arrow functions, template literals, destructuring y spread).
+Se justifica su uso frente a alternativas porque:
+- Es nativo del navegador.
+- No requiere librerías externas para manipular el DOM.
+- Permite validación en tiempo real e interactividad completa.
+
+### 3.b Sintaxis básica (ES6+)
+En `js/script.js` se aplica:
+- `let` y `const` en lugar de `var`.
+- Arrow functions en callbacks de eventos y funciones utilitarias.
+- Template literals para construir tarjetas dinámicas del blog.
+- Desestructuración de objetos (`const { title, category, ... } = data`).
+- Spread operator (`posts = [...posts, newPost]`).
+
+### 3.c Selección y acceso a elementos
+Se usan:
+- `getElementById` para formulario, campos y contenedores.
+- `querySelectorAll` para iterar tarjetas del blog al filtrar.
+- `closest` y `matches` para manejar eventos de eliminación por delegación.
+
+### 3.d Creación y modificación de elementos
+Cada entrada del blog se genera dinámicamente con:
+- `createElement("article")`
+- Asignación de `dataset`, clases y contenido.
+- Inserción en DOM mediante `appendChild`.
+- Estructura semántica en tarjetas (`article.post-card`).
+
+### 3.e Eliminación de elementos
+Cada tarjeta incluye su botón de eliminar.
+Al pulsar:
+- Se localiza el elemento con `closest(".post-card")`.
+- Se verifica existencia y se elimina con `remove()`.
+- Se actualiza el array interno de entradas para mantener consistencia.
+
+### 3.f Modificación de estilos
+Se manipulan clases CSS con `classList.add/remove/toggle` para:
+- Estados de validación (`input-error`, `input-success`).
+- Ocultación por filtros (`hidden`) sin borrar del DOM.
+- Flujo libre de **modo oscuro** (`body.dark-mode`).
+
+## Funcionalidades implementadas
+
+1. **Gestor de entradas de blog** (feature principal integrada)
+   - Formulario con validación dinámica en tiempo real.
+   - Alta de entradas en una cuadrícula dinámica.
+   - Eliminación individual de entradas.
+   - Filtros por categoría y estado.
+
+2. **Flujo libre: modo oscuro**
+   - Botón para activar/desactivar tema.
+   - Persistencia con `localStorage`.
+
+## Estructura
+- `blog.html`
+- `css/style.css`
+- `js/script.js`
