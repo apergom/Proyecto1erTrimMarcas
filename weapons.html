@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="tracker/assets/js/script.js" defer></script>
+    <script src="tracker/assets/js/theme.js"></script>
+
+</head>
+<body>
+<header class="header">
+    <a href="index.html">
+        <img class="header__logo" src="assets/img/uklogo.png" alt="logo"/>
+    </a>
+    <h1 class="header__title">UltraWiki</h1>
+    <nav class="navigator-header">
+        <ul class="navigator-header__ul">
+            <li class="navigator-header__item"><a class="navigator-header__link" href="services.html">Services</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="about.html">About</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="contact.html">Contact</a></li>
+            <li class="navigator-header__item"><a class="navigator-header__link" href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    <button type="button" id="dark-toggle" class="dark-toggle" aria-pressed="false">
+        Dark mode
+    </button></header>
+<main class="main">
+    <figure class="banner">
+        <img class="banner__img" src="assets/img/ukbanner2.png" alt="UltraWiki banner"/>
+
+    </figure>
+
+    <section class="main__section">
+        <h2 class="main__heading">List of Weapons</h2>
+
+        <!-- ARMS Table -->
+        <table class="weapons-table weapons-table--family">
+            <caption class="weapons-table__caption">ARMS</caption>
+            <thead class="weapons-table__thead">
+            <tr>
+                <th class="weapons-table__th">Weapon</th>
+                <th class="weapons-table__th">Image</th>
+                <th class="weapons-table__th">Primary Fire</th>
+                <th class="weapons-table__th">Secondary Fire</th>
+                <th class="weapons-table__th">Damage</th>
+                <th class="weapons-table__th">Cooldown</th>
+            </tr>
+            </thead>
+            <tbody class="weapons-table__tbody">
+            <tr class="weapons-table__group-title">
+                <td colspan="6">ARMS</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">FEEDBACKER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/64px-FeedbackerHUDNew.webp" alt="Feedbacker" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Punch</td>
+                <td class="weapons-table__td">Parry (Passive)</td>
+                <td class="weapons-table__td">1 / 5 (Parry)</td>
+                <td class="weapons-table__td">0 s</td>
+            </tr>
+            <tr class="weapons-table__row">
+                <td class="weapons-table__weapon-name">KNUCKLEBLASTER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/64px-KnuckleblasterHUDNew.webp" alt="Knuckleblaster" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Heavy Punch</td>
+                <td class="weapons-table__td">Shockwave</td>
+                <td class="weapons-table__td">2.5 / 1</td>
+                <td class="weapons-table__td">0 s</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">WHIPLASH</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/64px-WhiplashHUDNew.webp" alt="Whiplash" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Grappling Hook</td>
+                <td class="weapons-table__td">—</td>
+                <td class="weapons-table__td">0.2</td>
+                <td class="weapons-table__td">0 s</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- REVOLVERS Table -->
+        <table class="weapons-table weapons-table--family">
+            <caption class="weapons-table__caption">REVOLVERS</caption>
+            <thead class="weapons-table__thead">
+            <tr>
+                <th class="weapons-table__th">Weapon</th>
+                <th class="weapons-table__th">Image</th>
+                <th class="weapons-table__th">Primary Fire</th>
+                <th class="weapons-table__th">Secondary Fire</th>
+                <th class="weapons-table__th">Damage</th>
+                <th class="weapons-table__th">Cooldown</th>
+            </tr>
+            </thead>
+            <tbody class="weapons-table__tbody">
+            <tr class="weapons-table__group-title">
+                <td colspan="6">DEFAULT REVOLVERS</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">PIERCER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-SingleRevolver.webp" alt="Default Piercer" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Revolver Shot</td>
+                <td class="weapons-table__td">Piercing Shot</td>
+                <td class="weapons-table__td">1/1.5/2 / 1/1.5/2[x3]</td>
+                <td class="weapons-table__td">0.5s / 2.5s</td>
+            </tr>
+            <tr class="weapons-table__row">
+                <td class="weapons-table__weapon-name">MARKSMAN</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-RevolverSpecial.webp" alt="Default Marksman" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Revolver Shot</td>
+                <td class="weapons-table__td">Coin Toss</td>
+                <td class="weapons-table__td">1/1.5/2 / + x Thrown Coins</td>
+                <td class="weapons-table__td">0.5s / 4s[x4]</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">SHARPSHOOTER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-RevolverSharp.webp" alt="Default Sharpshooter" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Revolver Shot</td>
+                <td class="weapons-table__td">Piercing + Ricocheting Shot</td>
+                <td class="weapons-table__td">1/1.5/2 / 1/1.5/2 [x1/2/3]</td>
+                <td class="weapons-table__td">0.5s / 6.6s[x3]</td>
+            </tr>
+            <tr class="weapons-table__group-title">
+                <td colspan="6">ALTERNATE REVOLVERS</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">ALT PIERCER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-RevolverAltSingle.webp" alt="Alt Piercer" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Heavy Shot</td>
+                <td class="weapons-table__td">Heavy Piercing Shot</td>
+                <td class="weapons-table__td">1.25[x2] / 1.25[x4]+1.25[x2]</td>
+                <td class="weapons-table__td">1s / 5s</td>
+            </tr>
+            <tr class="weapons-table__row">
+                <td class="weapons-table__weapon-name">ALT MARKSMAN</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-RevolverAltSpecial.webp" alt="Alt Marksman" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Heavy Shot</td>
+                <td class="weapons-table__td">Coin Toss</td>
+                <td class="weapons-table__td">1.25[x2] / +1 first, +0.5 chain</td>
+                <td class="weapons-table__td">1s / 4s[x4]</td>
+            </tr>
+            <tr class="weapons-table__row weapons-table__striped">
+                <td class="weapons-table__weapon-name">ALT SHARPSHOOTER</td>
+                <td class="weapons-table__weapon-img">
+                    <img src="assets/img/128px-RevolverAltSharp.webp" alt="Alt Sharpshooter" width="32" height="32">
+                </td>
+                <td class="weapons-table__td">Heavy Shot</td>
+                <td class="weapons-table__td">Heavy Piercing+Ricocheting Shot</td>
+                <td class="weapons-table__td">1.25[x2]/[x2/3/4]</td>
+                <td class="weapons-table__td">1s / ~8.57s</td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- Add other families if desired, same format, adding group-title and rows -->
+        <p>Work in Progress...</p>
+    </section>
+</main>
+<footer class="footer">
+    <ul class="footer__ul">
+        <li><a href="https://www.indie.io/terms-of-service">Terms of Service</a></li>
+        <li><a href="https://www.indie.io/privacy-policy">Privacy Policy</a></li>
+        <li>My Links
+            <ul>
+                <li><a href="https://www.instagram.com/m_de_manola/">Instagram</a></li>
+                <li><a href="https://discord.gg/sHWhaqzWzE">Discord</a></li>
+                <li><a href="https://x.com/MdeManola">Twitter/X</a></li>
+            </ul>
+        </li>
+        <li>Creator's Social Media
+            <ul class="socials">
+                <li><a href="https://www.youtube.com/hakita">YouTube</a></li>
+                <li><a href="https://discord.gg/newblood">Discord</a></li>
+                <li><a href="https://x.com/hakitadev">Twitter/X</a></li>
+            </ul>
+        </li>
+        <li><a href="https://store.steampowered.com/app/1229490/ULTRAKILL/">Game Page</a></li>
+        <li>
+            <form>
+                <fieldset>
+                    <legend>Join our Newsletter</legend>
+                    <label for="newsletter-email-weapons">Email:</label>
+                    <input type="email" id="newsletter-email-weapons" name="email" placeholder="me@ultra.kill">
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </li>
+    </ul>
+
+</footer>
+</body>
+</html>
