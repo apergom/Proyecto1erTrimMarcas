@@ -1,6 +1,5 @@
 const btn = document.getElementById("dark-toggle");
 
-// cargar preferencia
 if (localStorage.getItem("dark") === "1") {
   document.body.classList.add("dark");
   btn.textContent = "Modo claro";
